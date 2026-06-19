@@ -1,0 +1,199 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* OStrack — Design Tokens (safe theme, ported from the app's tokens.css) */
+:root {
+  /* Radii */
+  --r-xs: 4px;
+  --r-sm: 6px;
+  --r-md: 8px;
+  --r-lg: 12px;
+  --r-xl: 16px;
+
+  /* Brand accents */
+  --brand: #2952E3;
+  --brand-fg: #FFFFFF;
+  --brand-tint: rgba(41, 82, 227, 0.08);
+  --brand-line: rgba(41, 82, 227, 0.22);
+
+  /* Semaphore */
+  --ok: #0E9F6E;
+  --warn: #C2701C;
+  --bad: #D14343;
+  --info: #2563EB;
+  --plum: #6E48B6;
+
+  /* Safe theme surfaces */
+  color-scheme: light;
+  --paper: #FFFFFF;
+  --paper-2: #F7F8FA;
+  --paper-3: #EFF1F4;
+  --rule: #E6E8EB;
+  --rule-2: #DDE0E4;
+  --ink: #0A0F1C;
+  --ink-2: #1E2533;
+  --mute: #5B6472;
+  --faint: #9AA3B2;
+  --chip: #F1F2F5;
+
+  --ok-bg: #E6F6EE;
+  --warn-bg: #FBF1E1;
+  --bad-bg: #FBE6E6;
+  --info-bg: #E6EEFB;
+  --plum-bg: #EDE6F7;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--paper-2);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "ss01", "cv11";
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.005em;
+}
+
+/* Utility classes mirrored from the app */
+.eyebrow {
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--mute);
+  font-weight: 500;
+}
+
+.mono {
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-feature-settings: "ss01";
+}
+
+.numerals {
+  font-variant-numeric: tabular-nums;
+}
+
+.hairline {
+  background: var(--rule);
+  height: 1px;
+  width: 100%;
+}
+
+:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Scrollbars */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--rule);
+  border-radius: 8px;
+  border: 2px solid var(--paper-2);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--rule-2);
+}
+
+/* ───── Animations ───── */
+@keyframes os-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 var(--brand-tint); }
+  50% { box-shadow: 0 0 0 8px var(--brand-tint); }
+}
+
+/* Floats em fases diferentes para parallax perceptível */
+@keyframes os-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-16px); }
+}
+@keyframes os-float-soft {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+@keyframes os-float-slow {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-22px) rotate(-1deg); }
+}
+
+.os-float { animation: os-float 6s ease-in-out infinite; }
+.os-float-soft { animation: os-float-soft 5s ease-in-out infinite; }
+.os-float-slow { animation: os-float-slow 8s ease-in-out infinite; }
+
+/* Desenho de linha de gráfico (stroke-dashoffset setado inline) */
+@keyframes os-draw {
+  to { stroke-dashoffset: 0; }
+}
+
+/* Anel que preenche */
+@keyframes os-ring {
+  to { stroke-dashoffset: var(--ring-target, 0); }
+}
+
+/* Brilho deslizante para o botão glass — usado com animation-direction: alternate
+   para fazer o light swipe ir e voltar em loop. */
+@keyframes os-shimmer {
+  from { transform: translateX(-130%) skewX(-12deg); }
+  to { transform: translateX(230%) skewX(-12deg); }
+}
+
+/* Dot "ao vivo" */
+@keyframes os-live {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.45; transform: scale(0.8); }
+}
+.os-live { animation: os-live 1.8s ease-in-out infinite; }
+
+/* Entrada das barras */
+@keyframes os-grow {
+  from { transform: scaleY(0.15); opacity: 0; }
+  to { transform: scaleY(1); opacity: 1; }
+}
+
+/* Crescimento de barra (não depende de opacidade — sempre visível ao final) */
+@keyframes os-bar {
+  from { transform: scaleY(0); }
+  to { transform: scaleY(1); }
+}
+
+/* Rotação lenta (orbital do hub do Problema) */
+@keyframes os-spin { to { transform: rotate(360deg); } }
+@keyframes os-spin-rev { to { transform: rotate(-360deg); } }
+.os-spin { animation: os-spin 28s linear infinite; }
+.os-spin-rev { animation: os-spin-rev 36s linear infinite; }
+
+/* Glow pulsante do núcleo */
+@keyframes os-glow {
+  0%, 100% { opacity: 0.45; transform: scale(1); }
+  50% { opacity: 0.75; transform: scale(1.05); }
+}
+.os-glow { animation: os-glow 3.6s ease-in-out infinite; }
+
+/* Pontos fluindo pelas linhas conectoras (dados convergindo ao núcleo) */
+@keyframes os-flow { to { stroke-dashoffset: -28; } }
+
+/* Halo de "respiração" dos nós */
+@keyframes os-node {
+  0%, 100% { box-shadow: 0 8px 24px rgba(11,15,28,0.10), 0 0 0 0 var(--brand-tint); }
+  50% { box-shadow: 0 8px 24px rgba(11,15,28,0.10), 0 0 0 7px var(--brand-tint); }
+}
+
+/* Nota de acessibilidade: optamos por manter o motion gentil (fades + floats sutis)
+   mesmo com prefers-reduced-motion, porque é movimento de baixa amplitude e não
+   vestibular. Se precisar, dá pra reintroduzir um corte cirúrgico só nos floats
+   infinitos — mas sem o `*` com !important que zerava também as transições. */
