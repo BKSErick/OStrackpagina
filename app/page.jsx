@@ -21,21 +21,21 @@ export default function HomePage() {
             </Reveal>
             <Reveal delay={80}>
               <h1 className="mt-5 text-4xl sm:text-5xl lg:text-[3.4rem] font-semibold tracking-[-0.03em] leading-[1.05] text-ink">
-                Sua oficina não está lenta.{" "}
-                <span className="text-brand">Sua aprovação está.</span>
+                A peça não espera o torno.{" "}
+                <span className="text-brand">Espera a cotação ser aprovada.</span>
               </h1>
             </Reveal>
             <Reveal delay={160}>
               <p className="mt-6 text-lg text-mute leading-relaxed max-w-xl">
-                O OStrack rastreia cada ordem de serviço do recebimento à
-                entrega e ataca o que realmente trava o reparo: o tempo
-                perdido entre periciar, orçar e esperar o cliente aprovar.
+                Pare de travar suas bancadas de trabalho por causa de e-mails de
+                orçamento esquecidos na caixa de entrada do seu cliente. O OStrack
+                centraliza laudos, fotos de peritagem e aprovações rápidas em um só lugar.
               </p>
             </Reveal>
             <Reveal delay={240}>
               <div className="mt-8 flex flex-wrap items-center gap-3">
                 <Button href="/contato" variant="glass" color="brand">
-                  Solicitar demo <Icons.arrowRight />
+                  Destravar Minha Oficina <Icons.arrowRight />
                 </Button>
                 <Button href="/como-funciona" variant="secondary">
                   Ver como funciona
@@ -45,7 +45,7 @@ export default function HomePage() {
             <Reveal delay={320}>
               <div className="mt-8 flex items-center gap-2 text-sm text-faint">
                 <Icons.clock width={16} height={16} />
-                O gargalo real é o lead time administrativo, não a máquina.
+                Reduza o lead time administrativo e libere espaço no pátio.
               </div>
             </Reveal>
           </div>
@@ -65,18 +65,15 @@ export default function HomePage() {
           <Reveal delay={120}>
             <Eyebrow>O problema</Eyebrow>
             <p className="mt-4 text-2xl sm:text-3xl font-medium tracking-[-0.02em] leading-snug text-ink">
-              A peça não espera o torno. Espera a assinatura. Enquanto o
-              orçamento dorme no e-mail, o equipamento do seu cliente fica
-              parado.{" "}
+              Seu pátio está lotado de equipamentos abertos que você não pode mexer.{" "}
               <span className="text-brand">
-                E a fila vira retrabalho, ligação cobrando status e margem
-                evaporando.
+                A equipe técnica fica ociosa e o cliente liga cobrando um prazo que ele mesmo travou ao deixar o orçamento pendente.
               </span>
             </p>
             <p className="mt-5 text-mute leading-relaxed">
-              O OStrack coloca a inteligência no centro da operação e destrava
-              cada etapa: peritagem, aprovação, execução e entrega passam a
-              fluir num só lugar, com o lead time sob controle.
+              Com o OStrack, a peritagem e a aprovação de orçamentos passam a fluir no
+              mesmo ambiente digital, eliminando o tempo morto e permitindo que as OS
+              entrem em execução imediatamente.
             </p>
           </Reveal>
         </div>

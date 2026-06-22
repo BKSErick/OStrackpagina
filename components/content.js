@@ -1,5 +1,5 @@
 // Conteúdo do site, derivado das telas reais do app OStrack.
-// Copy refinada via copy-chief sobre diagnóstico TOC (Goldratt):
+// Copy refinada via copy-chief sobre diagnóstico Easy Copy:
 // a restrição do cliente é o lead time ADMINISTRATIVO, não a máquina.
 
 export const STAGES = [
@@ -7,37 +7,37 @@ export const STAGES = [
     n: "01",
     icon: "inbox",
     title: "Entrada",
-    desc: "Recebimento e cadastro da OS, do cliente e do equipamento. Rastreável desde o primeiro minuto. Nada entra sem protocolo.",
+    desc: "Cadastro imediato da OS, do cliente e do equipamento com registro do estado de chegada. Rastreabilidade total desde o primeiro minuto.",
   },
   {
     n: "02",
     icon: "search",
     title: "Peritagem",
-    desc: "Inspeção técnica com diagnóstico estruturado, medições e fotos. Gera laudo em PDF pronto pro cliente, sem retrabalho.",
+    desc: "Peritagem móvel com fotos e laudos dimensionais direto pelo celular. Sem papel, sem redigitação de laudo no escritório.",
   },
   {
     n: "03",
     icon: "handshake",
     title: "Aprovação",
-    desc: "Orçamento enviado ao portal do cliente, que aprova com 1 clique. Aqui mora o gargalo, e é aqui que o OStrack ataca.",
+    desc: "Link exclusivo enviado por WhatsApp. Seu cliente visualiza o laudo técnico com fotos e aprova o orçamento digital em 1 clique.",
   },
   {
     n: "04",
     icon: "wrench",
     title: "Execução",
-    desc: "Kanban do chão de fábrica com responsável, etapa e status de cada OS em tempo real. Você vê onde cada peça travou.",
+    desc: "Kanban visual do chão de fábrica. Saiba exatamente em qual posto de trabalho (jateamento, usinagem, montagem) a peça está.",
   },
   {
     n: "05",
     icon: "layers",
     title: "Montagem & Qualidade",
-    desc: "Montagem final com testes de qualidade registrados. Nada sai da bancada sem passar pelo gate de conformidade.",
+    desc: "Checklist de testes dimensionais e de pressão registrados. Reduza a zero os retrabalhos antes de liberar o equipamento.",
   },
   {
     n: "06",
     icon: "truck",
     title: "Entrega",
-    desc: "Relatório de conclusão, encerramento da OS e histórico completo, pronto pro próximo serviço do mesmo cliente.",
+    desc: "Encerramento automático da OS com relatório completo de intervenção e histórico de desgaste pronto para o cliente.",
   },
 ];
 
@@ -45,32 +45,32 @@ export const FEATURES = [
   {
     icon: "kanban",
     title: "Kanban de OS",
-    desc: "Todas as ordens por etapa do fluxo. Veja num relance qual OS está parada e há quantos dias está esperando.",
+    desc: "Organize toda a produção por posto de trabalho. Identifique na hora qual redutor ou cilindro está acumulando poeira e há quantos dias.",
   },
   {
     icon: "file",
     title: "Peritagem & Diagnóstico",
-    desc: "Laudo técnico estruturado com medições e fotos, exportado em PDF profissional com a marca da sua empresa.",
+    desc: "Laudos técnicos estruturados de desgaste e medições, exportados em PDF profissional com a sua logo para o cliente.",
   },
   {
     icon: "handshake",
     title: "Orçamento & Aprovação",
-    desc: "Monte o orçamento item a item e mande pra aprovação digital. O cliente aprova com 1 clique, sem 8 e-mails.",
+    desc: "Gere orçamentos conectados à peritagem e envie via WhatsApp. Seu cliente aprova com 1 clique, agilizando a compra.",
   },
   {
     icon: "portal",
     title: "Portal do Cliente",
-    desc: "Seu cliente acompanha a OS, aprova orçamentos e baixa laudos sozinho, e para de ligar perguntando status.",
+    desc: "Um painel transparente para o seu cliente conferir status ao vivo, baixar laudos e aprovar propostas sem precisar te ligar.",
   },
   {
     icon: "chart",
     title: "Inteligência & Lead Time",
-    desc: "Dashboards de lead time, gargalos e throughput. Decida pelo fluxo real da oficina, não por achismo.",
+    desc: "Indicadores automáticos de lead time operacional e administrativo. Identifique onde a OS perde mais tempo.",
   },
   {
     icon: "users",
     title: "Equipe Técnica",
-    desc: "Distribua OS por técnico, acompanhe a carga de trabalho e responsabilize cada etapa do reparo.",
+    desc: "Distribua ordens por especialidade técnica e rastreie o desempenho e gargalos por funcionário no chão de fábrica.",
   },
 ];
 
@@ -87,7 +87,7 @@ export const CLIENT_TIMELINE = [
     icon: "inbox",
     when: "No recebimento",
     title: "Equipamento recebido",
-    desc: "Protocolo OS-2041 aberto. Você recebe a confirmação na hora, com nº da ordem e responsável.",
+    desc: "Protocolo OS-2041 aberto. Você recebe a confirmação na hora por e-mail ou WhatsApp com nº da ordem.",
     tag: "Confirmação automática",
   },
   {
@@ -95,7 +95,7 @@ export const CLIENT_TIMELINE = [
     icon: "file",
     when: "Após a peritagem",
     title: "Laudo de diagnóstico",
-    desc: "Diagnóstico técnico em PDF, com fotos e medições. Sem juridiquês: você entende o que sua peça tem.",
+    desc: "Diagnóstico visual e dimensional transparente em PDF, com fotos claras demonstrando a necessidade técnica da troca.",
     tag: "PDF profissional",
   },
   {
@@ -103,7 +103,7 @@ export const CLIENT_TIMELINE = [
     icon: "handshake",
     when: "Para decidir",
     title: "Orçamento no portal",
-    desc: "Aprove ou questione com 1 clique. Sem troca de 8 e-mails, sem orçamento perdido na caixa de entrada.",
+    desc: "Aprove ou questione itens direto na plataforma. Sem burocracia, sem perder cotações no e-mail.",
     tag: "Aprovação 1-clique",
   },
   {
@@ -111,7 +111,7 @@ export const CLIENT_TIMELINE = [
     icon: "kanban",
     when: "Durante o reparo",
     title: "Acompanhamento em tempo real",
-    desc: "Veja a etapa atual da sua OS quando quiser. Zero ligação pra perguntar 'e aí, como tá?'.",
+    desc: "Acesso ao vivo ao posto atual de trabalho da peça. Transparência que reduz ligações de cobrança.",
     tag: "Status ao vivo",
   },
   {
@@ -119,7 +119,7 @@ export const CLIENT_TIMELINE = [
     icon: "check",
     when: "Antes de sair",
     title: "Certificado de qualidade",
-    desc: "Testes de conformidade registrados antes da peça deixar a bancada. Você recebe a comprovação.",
+    desc: "Comprovação dos testes dimensionais e funcionais realizados antes de embalar.",
     tag: "Conformidade",
   },
   {
@@ -127,7 +127,7 @@ export const CLIENT_TIMELINE = [
     icon: "truck",
     when: "Na entrega",
     title: "Relatório de conclusão",
-    desc: "Histórico completo do serviço, pronto pra auditoria e pro próximo reparo do mesmo equipamento.",
+    desc: "Histórico completo do serviço estruturado para auditorias e decisões futuras de manutenção.",
     tag: "Histórico completo",
   },
 ];
