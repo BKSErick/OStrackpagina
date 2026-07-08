@@ -72,6 +72,7 @@ export default function DiagnosticoPage() {
     // 2. Gravar no banco de dados do CRM Erick
     const payload = {
       nome: formData.nome,
+      empresa: formData.empresa,
       email: formData.email,
       telefone: formData.telefone,
       segmento: "recuperadora_industrial",
