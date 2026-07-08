@@ -6,7 +6,7 @@ const columns = [
     title: "Peritagem",
     tone: "var(--info)",
     cards: [
-      { os: "OS-2041", cli: "Metaltech", tag: "Redutor" },
+      { os: "OS-2041", cli: "MineraSul", tag: "Redutor" },
       { os: "OS-2044", cli: "Ferromax", tag: "Bomba" },
     ],
   },
@@ -19,7 +19,7 @@ const columns = [
     title: "Execução",
     tone: "var(--brand)",
     cards: [
-      { os: "OS-2030", cli: "Metaltech", tag: "Eixo" },
+      { os: "OS-2030", cli: "MineraSul", tag: "Eixo" },
       { os: "OS-2031", cli: "Usicampo", tag: "Caixa" },
     ],
   },

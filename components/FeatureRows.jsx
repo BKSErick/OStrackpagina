@@ -89,7 +89,7 @@ function ApprovalMock() {
         <div className="flex items-center justify-between">
           <div>
             <div className="eyebrow !text-[9px]">Orçamento</div>
-            <div className="mono text-sm text-ink-2 mt-0.5">OS-2041 · Metaltech</div>
+            <div className="mono text-sm text-ink-2 mt-0.5">OS-2041 · MineraSul</div>
           </div>
           <span className="flex items-center gap-1.5 text-[11px] text-ok mono">
             <span className="w-1.5 h-1.5 rounded-full bg-ok os-live" /> No portal

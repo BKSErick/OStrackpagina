@@ -32,7 +32,7 @@ export function BentoGrid() {
         <CardShell className="h-full flex flex-col p-6">
           <Heading title="A fila que anda" desc="Veja, num relance, em que etapa cada OS está e quanto já avançou." />
           <div className="mt-auto space-y-2 pt-5">
-            <OsRow os="OS-2041" label="Redutor · Metaltech" pct={72} active />
+            <OsRow os="OS-2041" label="Redutor · MineraSul" pct={72} active />
             <OsRow os="OS-2044" label="Bomba · Ferromax" pct={38} />
           </div>
         </CardShell>

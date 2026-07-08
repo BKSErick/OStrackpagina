@@ -197,3 +197,18 @@ body {
    mesmo com prefers-reduced-motion, porque é movimento de baixa amplitude e não
    vestibular. Se precisar, dá pra reintroduzir um corte cirúrgico só nos floats
    infinitos — mas sem o `*` com !important que zerava também as transições. */
+
+@keyframes wa-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.45);
+  }
+  70% {
+    box-shadow: 0 0 0 16px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+.wa-pulse {
+  animation: wa-pulse 2s infinite;
+}

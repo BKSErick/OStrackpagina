@@ -3,15 +3,15 @@ import { Icons } from "@/components/Icons";
 import { ContactForm } from "@/components/ContactForm";
 
 export const metadata = {
-  title: "Contato",
+  title: "Demo e diagnóstico",
   description:
-    "Solicite uma demonstração do OStrack para a sua recuperadora industrial.",
+    "Solicite uma demonstração do OStrack aplicada ao fluxo real da sua recuperadora industrial.",
 };
 
 const bullets = [
-  "Demonstração com o fluxo da sua operação",
-  "Sem compromisso e sem cartão de crédito",
-  "Resposta em até 1 dia útil",
+  "Demo com uma OS parecida com a sua operação",
+  "Diagnóstico do gargalo: aprovação, compras, execução, qualidade ou databook",
+  "Próxima ação clara: piloto, implementação ou ajuste de processo",
 ];
 
 export default function ContatoPage() {
@@ -19,13 +19,13 @@ export default function ContatoPage() {
     <Section className="pt-16 sm:pt-20 pb-20">
       <div className="grid lg:grid-cols-[1fr_1.1fr] gap-12 lg:gap-16">
         <div>
-          <Eyebrow>Contato</Eyebrow>
+          <Eyebrow>Demo consultiva</Eyebrow>
           <h1 className="mt-3 text-4xl sm:text-5xl font-semibold tracking-[-0.03em] text-ink leading-[1.05]">
-            Vamos colocar suas OS no eixo.
+            Vamos encontrar onde sua OS está perdendo tempo.
           </h1>
           <p className="mt-5 text-lg text-mute leading-relaxed">
-            Conte um pouco sobre a sua recuperadora e agendamos uma demonstração
-            do OStrack aplicada ao seu fluxo.
+            Conte como sua recuperadora controla OS hoje. A demonstração parte do
+            seu gargalo real, não de uma apresentação genérica de software.
           </p>
           <ul className="mt-8 space-y-3">
             {bullets.map((b) => (

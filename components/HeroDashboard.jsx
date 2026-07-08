@@ -5,7 +5,7 @@ import { Icons } from "@/components/Icons";
 // Evoca a dash real do SaaS e comunica rastreabilidade.
 
 const kanban = [
-  { title: "Peritagem", tone: "var(--info)", cards: [{ os: "OS-2041", cli: "Metaltech" }] },
+  { title: "Peritagem", tone: "var(--info)", cards: [{ os: "OS-2041", cli: "MineraSul" }] },
   { title: "Aprovação", tone: "var(--warn)", cards: [{ os: "OS-2038", cli: "Indústria SP" }] },
   { title: "Execução", tone: "var(--brand)", cards: [{ os: "OS-2030", cli: "Usicampo" }] },
 ];

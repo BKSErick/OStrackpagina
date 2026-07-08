@@ -3,39 +3,52 @@
 import { useState } from "react";
 import { Button } from "@/components/ui";
 
-// WhatsApp de destino (Erick / OStrack). Formato wa.me: DDI+DDD+numero, só dígitos.
+// WhatsApp de destino (Erick / OStrack). Formato wa.me: DDI+DDD+numero, so digitos.
 const WHATSAPP_NUMBER = "5531991072407";
 
 const field =
   "w-full h-11 px-3.5 rounded-md bg-paper border border-rule text-ink placeholder:text-faint text-sm focus:border-brand focus:outline-none transition-colors";
+
+const area =
+  "w-full min-h-24 px-3.5 py-3 rounded-md bg-paper border border-rule text-ink placeholder:text-faint text-sm focus:border-brand focus:outline-none transition-colors resize-y";
 
 export function ContactForm() {
   const [sent, setSent] = useState(false);
 
   function handleSubmit(e) {
     e.preventDefault();
-    const data = new FormData(e.currentTarget);
     const msg =
       `*Nova solicitação de demo (OStrack)*\n\n` +
       `*Nome:* ${data.get("nome")}\n` +
       `*Empresa:* ${data.get("empresa")}\n` +
       `*E-mail:* ${data.get("email")}\n` +
-      `*Telefone:* ${data.get("telefone") || "não informado"}`;
+      `*Telefone:* ${data.get("telefone") || "não informado"}\n` +
+      `*Volume de OS:* ${data.get("volume") || "não informado"}\n` +
+      `*Maior gargalo:* ${data.get("gargalo") || "não informado"}\n` +
+      `*Como controla hoje:* ${data.get("controle") || "não informado"}`;
     const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
+
+    if (typeof window !== "undefined" && typeof window.fbq === "function") {
+      window.fbq("track", "Lead", {
+        content_name: "OStrack demo",
+        lead_type: data.get("gargalo") || "demo",
+      });
+    }
+
     window.open(url, "_blank", "noopener,noreferrer");
     setSent(true);
   }
 
   if (sent) {
     return (
-      <div className="bg-paper border border-rule rounded-lg shadow-card-1 p-8 flex flex-col items-center text-center justify-center min-h-[360px]">
+      <div className="bg-paper border border-rule rounded-lg shadow-card-1 p-8 flex flex-col items-center text-center justify-center min-h-[420px]">
         <div className="w-12 h-12 rounded-full bg-ok/10 text-ok flex items-center justify-center text-2xl">
           ✓
         </div>
-        <h2 className="mt-4 text-xl font-semibold text-ink">Quase lá!</h2>
+        <h2 className="mt-4 text-xl font-semibold text-ink">Quase lá.</h2>
         <p className="mt-2 text-mute max-w-xs">
-          Abrimos o WhatsApp com sua solicitação. É só apertar enviar que a gente
-          responde rapidinho.
+          Abrimos o WhatsApp com seu diagnóstico inicial. Envie a mensagem para
+          seguirmos com a demo aplicada ao seu fluxo.
         </p>
         <button
           onClick={() => setSent(false)}
@@ -68,8 +81,37 @@ export function ContactForm() {
           <input name="telefone" placeholder="(31) 90000-0000" className={field} />
         </Label>
       </div>
+      <div className="grid sm:grid-cols-2 gap-4">
+        <Label text="Volume de OS">
+          <select name="volume" className={field} defaultValue="">
+            <option value="" disabled>Selecione</option>
+            <option>Até 10 OS por mês</option>
+            <option>11 a 30 OS por mês</option>
+            <option>31 a 80 OS por mês</option>
+            <option>Mais de 80 OS por mês</option>
+          </select>
+        </Label>
+        <Label text="Maior gargalo hoje">
+          <select name="gargalo" className={field} defaultValue="">
+            <option value="" disabled>Selecione</option>
+            <option>Aprovação do cliente</option>
+            <option>Compras e peças</option>
+            <option>Execução no chão de fábrica</option>
+            <option>Qualidade e relatório técnico</option>
+            <option>Databook/documentação final</option>
+            <option>Não sei medir</option>
+          </select>
+        </Label>
+      </div>
+      <Label text="Como você controla isso hoje?">
+        <textarea
+          name="controle"
+          placeholder="Ex.: planilha, WhatsApp, ERP, papel, reunião diária..."
+          className={area}
+        />
+      </Label>
       <Button type="submit" variant="glass" color="ok" className="w-full">
-        <WhatsAppIcon /> Enviar pelo WhatsApp
+        <WhatsAppIcon /> Enviar diagnóstico pelo WhatsApp
       </Button>
       <p className="text-xs text-faint text-center">
         Ao enviar, abrimos o WhatsApp com seus dados preenchidos.
