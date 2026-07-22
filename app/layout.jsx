@@ -66,6 +66,14 @@ fbq('track', 'PageView');
                 `,
               }}
             />
+            {/* Radar de Sinais do CRM: o fbq nao alimenta o banco do CRM, esse script sim. */}
+            <Script
+              id="crm-sinais"
+              strategy="afterInteractive"
+              src="https://crmerick.vercel.app/diagnostico-pixel.js"
+              data-endpoint="https://crmerick.vercel.app/api/facebook-pixel"
+              data-client-name="Site OStrack"
+            />
             <noscript>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
