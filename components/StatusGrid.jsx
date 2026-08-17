@@ -22,7 +22,7 @@ const ITEMS = [
     icon: "handshake",
     value: "1 clique",
     title: "Aprovação do cliente",
-    desc: "Orçamento aprovado pelo portal — sem troca de e-mails.",
+    desc: "Orçamento aprovado pelo portal, sem troca de e-mails.",
   },
   {
     icon: "clock",

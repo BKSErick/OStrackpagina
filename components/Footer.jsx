@@ -12,6 +12,18 @@ export function Footer() {
               Gestão de ordens de serviço para recuperadoras industriais.
               Do recebimento à entrega, com o lead time sob controle.
             </p>
+            <p className="mt-4 text-sm text-mute leading-relaxed">
+              OStrack é um produto{" "}
+              <a
+                href="https://mydrion.vercel.app"
+                target="_blank"
+                rel="noreferrer"
+                className="text-ink-2 underline underline-offset-4 decoration-rule hover:text-ink transition-colors"
+              >
+                Mydrion
+              </a>
+              .
+            </p>
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-10">

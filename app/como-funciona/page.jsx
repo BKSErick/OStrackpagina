@@ -20,7 +20,7 @@ export default function ComoFuncionaPage() {
           </h1>
           <p className="mt-5 text-lg text-mute max-w-2xl leading-relaxed">
             Toda ordem de serviço percorre seis etapas rastreáveis. Cada
-            transição fica registrada — então você não descobre o atraso no fim,
+            transição fica registrada, então você não descobre o atraso no fim,
             descobre na hora em que ele acontece.
           </p>
         </Reveal>
