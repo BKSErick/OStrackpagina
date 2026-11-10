@@ -11,7 +11,7 @@ const nav = [
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-50 bg-paper/85 backdrop-blur-md border-b border-rule">
+    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-rule">
       <div className="mx-auto max-w-content px-5 sm:px-8 h-16 flex items-center justify-between gap-6">
         <Link href="/" aria-label="OStrack, início">
           <Wordmark size={17} sub="OS TRACKING" />

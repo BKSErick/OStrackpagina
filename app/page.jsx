@@ -1,7 +1,9 @@
+import "./os-demo.css";
+import { Operacao as OsDemo } from "@/components/OsDemo";
 import { Section, Button, Eyebrow, Card, Chip } from "@/components/ui";
 import { Icons } from "@/components/Icons";
 import { STAGES, FEATURES } from "@/components/content";
-import { HeroDashboard } from "@/components/HeroDashboard";
+import { OficinaInterativa } from "@/components/InteractiveScenes";
 import { Reveal } from "@/components/Reveal";
 import { ClientTimeline } from "@/components/ClientTimeline";
 import { CTASection } from "@/components/CTASection";
@@ -72,45 +74,24 @@ function BulletList({ items }) {
 export default function HomePage() {
   return (
     <>
-      <Section className="pt-16 sm:pt-24 pb-20">
-        <div className="grid lg:grid-cols-[1.05fr_1fr] gap-12 lg:gap-16 items-center">
-          <div>
-            <Reveal>
-              <Chip>
-                <span className="text-brand">●</span> Pipeline de recuperação industrial
-              </Chip>
-            </Reveal>
-            <Reveal delay={80}>
-              <h1 className="mt-5 text-4xl sm:text-5xl lg:text-[3.4rem] font-semibold tracking-[-0.03em] leading-[1.05] text-ink">
-                Sua OS não trava na máquina.{" "}
-                <span className="text-brand">Trava antes da aprovação e do databook.</span>
-              </h1>
-            </Reveal>
-            <Reveal delay={160}>
-              <p className="mt-6 text-lg text-mute leading-relaxed max-w-xl">
-                O OStrack organiza o fluxo da recuperadora do recebimento à entrega:
-                peritagem, escopo técnico, aprovação do cliente, compras, execução,
-                qualidade e documento final no mesmo rastro operacional.
-              </p>
-            </Reveal>
-            <Reveal delay={240}>
-              <div className="mt-8 flex flex-wrap items-center gap-3">
-                <Button href="/contato" variant="glass" color="brand">
-                  Ver o OStrack na minha OS <Icons.arrowRight />
-                </Button>
-                <Button href="/diagnostico" variant="secondary">
-                  Diagnosticar meu gargalo
-                </Button>
-              </div>
-            </Reveal>
-
+      <section className="overflow-hidden bg-[#11131d] text-white" aria-label="Conheça o fluxo de uma ordem de serviço">
+        <div className="mx-auto max-w-6xl px-6 pt-8 text-center sm:pt-9 lg:pt-7">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-blue-300">Pipeline de recuperação industrial</p>
+          <h1 className="mx-auto mt-3 max-w-5xl text-3xl font-semibold leading-[1.1] tracking-[-0.035em] sm:text-4xl lg:text-5xl">
+            Sua OS não trava na máquina. <span className="text-blue-400">Trava antes da aprovação e do databook.</span>
+          </h1>
+          <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-slate-300 sm:text-base">
+            Acompanhe cada etapa da recuperação, do recebimento à entrega, em um só fluxo.
+          </p>
+          <div className="mt-5 flex flex-wrap items-center justify-center gap-3">
+            <Button href="/contato" variant="glass" color="brand">Ver o OStrack na minha OS <Icons.arrowRight /></Button>
+            <Button href="/diagnostico" variant="secondary">Diagnosticar meu gargalo</Button>
           </div>
-
-          <Reveal delay={200}>
-            <HeroDashboard />
-          </Reveal>
         </div>
-      </Section>
+        <OficinaInterativa />
+      </section>
+
+      <OsDemo />
 
       <Section className="py-16">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
